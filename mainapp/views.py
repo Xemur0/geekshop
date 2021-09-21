@@ -4,7 +4,6 @@ import datetime
 # Create your views here.
 def index(request):
     context = {
-        'date': datetime.date.today(),
         'title': 'geekshop',
     }
     return render(request, 'mainapp/index.html', context)
