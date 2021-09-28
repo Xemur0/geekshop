@@ -5,6 +5,7 @@ from mainapp.models import Product
 
 
 
+
 MODULE_DIR = os.path.dirname(__file__)
 # Create your views here.
 
@@ -22,3 +23,4 @@ def products(request):
         'products': Product.objects.all()
     }
     return render(request, 'mainapp/products.html', context)
+
