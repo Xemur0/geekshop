@@ -1,7 +1,7 @@
 from django.shortcuts import render
 import os, json
 
-from mainapp.models import Product
+from mainapp.models import Product, ProductCategory
 
 
 
@@ -17,10 +17,10 @@ def index(request):
 
 
 def products(request):
-    # file_path = os.path.join(MODULE_DIR, 'fixtures/goods.json')
     context = {
         'title': 'geekshop',
-        'products': Product.objects.all()
+        'products': Product.objects.all(),
+        'categories': ProductCategory.objects.all(),
     }
     return render(request, 'mainapp/products.html', context)
 
